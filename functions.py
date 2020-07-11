@@ -2,11 +2,18 @@ import random
 
 class Farm(object):
 
-    def __init__(self, countChicken, food, countCow, cowFood):
+    global size
+    size = 100
+    global lvl
+    lvl = 1
+
+    def __init__(self, countChicken, food, countCow, cowFood, size):
         self.countChicken = countChicken
         self.food = food
         self.countCow = countCow
         self.cowFood = cowFood
+        self.size = size
+
 
     def feedAnimals(self, countChicken, countCow ,food, cowFood):
         print('food: ', food, ', cow food: ', cowFood)
@@ -34,6 +41,9 @@ class Randomize(object):
     def animalRandomFood(self, countCow, cowFood):
         pass
 
+    def gamerLevel(self):
+        pass
+    
     
     def animalRandomSelection(self, countChicken, food, countCow, cowFood):
         r = random.randint(1, 100)
