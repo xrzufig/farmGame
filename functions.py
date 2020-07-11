@@ -22,63 +22,41 @@ class Randomize(object):
         self.countCow = countCow
         self.cowFood = cowFood
 
-    def animalLifesCow(self, countCow, cowFood):
-        r = random.randint(1, 100)
-        if r >= 1 and r <= 7:
-            self.countCow += 3
-            self.cowFood += 15
-            print('cows: ', self.countCow)
-            print('food: ', self.cowFood)
-        elif r >= 8 and r <= 13:
-            self.countCow -= 2
-            self.cowFood += 15
-            print('food: ', self.cowFood)
-            print('cows: ', self.countCow)
-        elif r >= 14 and r <= 17:
-            self.countCow += 4
-            self.cowFood += 15
-            print('food: ', self.cowFood)
-            print('cows: ', self.countCow)
-        elif r >= 18 and r <= 25:
-            self.countCow -= 1
-            self.cowFood += 15
-            print('food: ', self.cowFood)
-            print('cows: ', self.countCow)
-        elif r == 77:
-            self.cowFood += 15
-            self.countCow += 15
-            print('food: ', self.cowFood)
-            print('cows: ', self.countCow)
-        else:
-            self.cowFood += 15
-            self.countCow += 1
-            print('food: ', self.cowFood)
-            print('cows: ', self.countCow)
+    def weather(self):
+        pass
+
+    def field(self):
+        pass
+
+    def harvest(self):
+        pass
+
+    def animalRandomFood(self, countCow, cowFood):
+        pass
+
     
-    def animalLifesChicken(self, countChicken, food):
-        r = random.randint(1, 50)
+    def animalRandomSelection(self, countChicken, food, countCow, cowFood):
+        r = random.randint(1, 100)
         print(r)
-        if r >= 1 and r <= 10:
-            if self.countChicken == 0:
-                self.countChicken -= 0
-            else:
-                self.countChicken -= 1
+        if r >= 1 and r <= 15:
+            rDelete = random.randint(1, 2)
+            if rDelete == 1:       
+                if self.countChicken == 0:
+                    self.countChicken -= 0
+                else:
+                    self.countChicken -= 1
+            elif rDelete == 2:
+                if self.countCow == 0:
+                    self.countCow -= 0
+                else:
+                    self.countCow -= 1
             self.food += 9
             print('* u lost animals: ', self.countChicken, 'gain food: ', self.food, '*')
-        elif r >= 11 and r <= 20:
+        elif r >= 16 and r <= 41:
             self.countChicken += 1
-            self.food += 11
             print('* u gain animals: ', self.countChicken, 'gain food: ', self.food, '*')
-        elif r >= 21 and r <= 30:
-            if self.countChicken == 0:
-                self.countChicken -= 0
-            self.food += 3
-            print('* u lost animals: ', self.countChicken, 'gain food: ', self.food, '*')
-        elif r >= 31 and r <= 40:
-            self.countChicken += 2
-            self.food += 18
-            print('* u gain animals: ', self.countChicken, 'gain food: ', self.food, '*')
+        elif r >= 42 and r <= 67:
+            self.countCow += 1
+            print('* u lost animals: ', self.countCow)
         else:
-            self.countChicken += 5
-            self.food += 15
-            print('* u gain animals: ', self.countChicken, 'gain food: ', self.food, '*')
+            print('nothing happend')
