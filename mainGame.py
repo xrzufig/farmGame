@@ -6,3 +6,6 @@ def nameInput():
     print('hello ', name)
 
 nameInput()
+
+Randomize.animalRandomSelection(0, 50, 5, 50, 50)
+Randomize.harvest(100, 100)
