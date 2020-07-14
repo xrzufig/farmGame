@@ -1,4 +1,5 @@
 from functions import Farm, Randomize
+import time
 
 def nameInput():
     print('Hello to ur new farm!')
@@ -7,5 +8,14 @@ def nameInput():
 
 nameInput()
 
-Randomize.animalRandomSelection(0, 50, 5, 50, 50)
-Randomize.harvest(100, 100)
+chicken = 50
+chickenFood = 250
+cow = 50
+cowFood = 250
+
+
+for i in range(5):
+    print("## ", i+1, " ##")
+    Randomize.animalRandomSelection(0, chicken, chickenFood, cow, cowFood)
+    Farm.feedAnimals(0, chicken, cow, chickenFood, cowFood)
+    Randomize.harvest(100, 100)

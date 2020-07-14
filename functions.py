@@ -11,11 +11,19 @@ class Farm(object):
 
 
     def feedAnimals(self, countChicken, countCow ,food, cowFood):
-        print('food: ', food, ', cow food: ', cowFood)
-        print('animals: ', countChicken, ' ', countCow)
-        feeded = food - countChicken - countCow - cowFood
-        print('food after feeding: ', feeded)
-    
+        rToFeed = random.randint(1, 100)
+        print('ur food: ', food)
+        toFeed = input('do you want to feed chickens, [y/n]:  ')
+
+        if toFeed == 'n':
+            if rToFeed == 77:
+                countCow -= 15
+            else:
+                print('ok')
+        else:
+            feeded = food - countChicken
+            print(feeded)
+
     def gamerLevel(self, countCow, countChicken):
         lvl = 1
         fieldSize = 100
@@ -148,7 +156,7 @@ class Randomize(object):
 
     def animalRandomFood(self, cowFood, chickenFood):
         rFood = random.randint(1, 100)
-        print(r)
+        print(rFood)
         if rFood >= 1 and rFood <= 25:
             cowFood += 15
             chickenFood += 15
@@ -177,7 +185,6 @@ class Randomize(object):
                     countCow -= 0
                 else:
                     countCow -= 1
-            print('* u lost animals: ', countChicken, '*')
         elif r >= 16 and r <= 41:
             countChicken += 1
             print('* u gain animals: ', countChicken, '*')
